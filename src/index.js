@@ -5,10 +5,11 @@ import Letreiro from './Letreiro';
 import Relogio from './Relogio';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <>
-    <Letreiro />
-    <Relogio />
-  </>
-);
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <>
+      <Letreiro/>
+      <Relogio/>
+    </>
+  );
+
