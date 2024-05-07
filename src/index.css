@@ -49,6 +49,98 @@ code {
 }
 
 .btn-voltar:hover {
-  background-color: #007bff; /* Azul */
+  background-color: #007bff;
   color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.total-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.total-box {
+  font-size: 24px;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.total-number {
+  font-weight: bold;
+}
+
+.refresh-btn {
+  background-image: url('refresh.jpg');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.pessoa-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 500px;
+}
+
+.pessoa {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+}
+
+.pessoa img {
+  width: 300px;
+  height: 250px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.quantidade {
+  font-size: 18px;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botao {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.botao.adicionar {
+  background-color: green;
+  color: white;
+}
+
+.botao.remover {
+  background-color: red;
+  color: white;
+}
+
+.botao.refresh {
+  background-color: transparent;
+  border: none;
 }

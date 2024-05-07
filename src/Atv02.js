@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Letreiro from './Letreiro';
+import Contador from './Contador';
 import './index.css';
 
 export default function Atv02(){
@@ -14,7 +14,7 @@ export default function Atv02(){
                         <button className="btn-voltar">VOLTAR AO MENU</button>
                     </Link>
                 </nav>
-                <Letreiro />
+                <Contador />
                 <br />
                     
             </header>
