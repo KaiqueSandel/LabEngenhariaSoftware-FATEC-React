@@ -281,7 +281,95 @@ export default function PackingList(){
     );
 }
 
+const people=[
+    'Creola Katherine Johnson: mathematician',
+    'Mario José Molina-Pasquel Henriques: chemist',
+    'Mohammad Abdus Salam: physicist',
+    'Percy Lavon Julian: chemist',
+    'Subrahmanyan Chandrasekhar: astrophysicist'
+];
+export default funciton List() {
+    const listItems = people.map(person => 
+        <li>{person}</li>
+    );
+    return <ul>{listItems}</ul>;
+}
+const people=[{
+        id: 0,    
+        name: 'Creola Katherine Johnson'
+        profession: 'mathematician',
+    }, {
+        id: 1,    
+        name: 'Mario José Molina-Pasquel Henriques'
+        profession: 'chemist',
+    }, {
+        id: 2,    
+        name: 'Mohammad Abdus Salam'
+        profession: 'physicist',
+    } , {
+        name: 'Percy Lavon Julian'
+        profession: 'chemist'
+    } , {
+        name: 'Subrahmanyan Chandrasekhar'
+        profession: 'astrophysicist'    
+}];
 
+const chemists = people.filter(person=>
+    person.profession === 'chemist'
+);
+const listItems = chemists.map(person =>
+    <li>
+        <img
+            src={getImageUrl(person)}
+            alt={person.name}
+        />
+        <p>
+            <b>{person.name}:</b>
+            {' ' + person.profession + ' '}
+            know for {person.accomplishment}
+        </p>
+    </li>
+)
+
+function double(number){
+    return 2 * number;
+}
+
+let guest = 0;
+function cup() {
+    // Bad: changing a preexisting variable!
+    guest = guest +1;
+    return <h2> Tea cup for guest #{guest}</h2>;
+}
+export default function TeaSet(){
+    return (
+        <>
+            <Cup />
+            <Cup />
+            <Cup />
+        </>
+    )
+} 
+export default function TeaSet(){
+    return (
+        <>
+            <Cup guest={1}/>
+            <Cup guest={2} />
+            <Cup guest={3} />
+        </>
+    )
+} 
+    function Cup({ guest }){
+        return <h2> Tea cup for guest #{guest}</h2>;
+    }
+    function TeaGathering(){
+        let cups = [];
+        let i = 0;
+        for (let i = 1, i <= 5; i++) {
+            cups.push(<Cup key={i} guest={i} />);
+        }
+        return cups;
+    }
 */
 import './index.css';
 
@@ -291,11 +379,6 @@ function formatDate(date) {
         'en-US',
         { weekday: 'long' }
     ).format(date);
-}
-function TodoList(){
-    return (
-        <h1>To Do List for {formatDate(today)}</h1>
-    )
 }
 
 function App() {
@@ -346,32 +429,67 @@ function App() {
             </li>
         );
     }
-    
-    function PackingList(){
+    const people = [{
+            id:0,
+            name: 'Creola Katherine Johnson',
+            profession: 'mahematician',
+            accomplishment: 'spaceflight calculations',
+            imageId: 'PlVwsaR',
+        }, {
+            id:1,
+            name: 'Mario José Molina-Pasquel Henriques',
+            profession: 'chemist',
+            accomplishment: 'discovery of Arctic ozone hole',
+            imageId: '575LNS6',
+        }, {
+            id:2,
+            name: 'Mohammad Abdus Salam',
+            profession: 'physicist',
+            accomplishment: 'electromagnetism theory',
+            imageId: 'GFlIdn5',
+        }, {
+            id:3,
+            name: 'Percy Lavon Julian',
+            profession: 'chemist',
+            accomplishment: 'pioneering cortise drugs, steroids',
+            imageId: 'eYGS95N',
+        } , {
+            id:4,
+            name: 'Subrahmanyan Chandrasekhar',
+            profession: 'astrophysicist',
+            accomplishment: 'discovery of Arctic ozone hole',
+            imageId: 'Lzx7amf',
+        }
+    ];
+    const chemists = people.filter(person=>
+        person.profession === 'chemist'
+    );
+    const listItems = chemists.map(person=>
+        <li>
+            <img
+                src={getImagemUrl(person)}
+                alt={person.name}
+            />
+            <p>
+                <b>{person.name}:</b>
+                {' ' + person.profession + ' '}
+                know for {person.accomplishment}
+            </p>
+        </li>
+    )
+    function Recipe({ drinkers }) {
         return (
-            <section>
-                <h1>Sally Ride's Packing List</h1>
-                <ul>
-                    <Item
-                        isPacked={true}
-                        name="Space suit"
-                    />
-                    <Item 
-                        isPacked={true}
-                        name="Helmet with a golden leaf"
-                    />
-                    <Item
-                        isPacked={false}
-                        name="Photo of Tam"
-                    />
-                </ul>
-            </section>
+            <ol>
+                <li>Boil {drinkers} cups of water.</li>
+                <li>Add  {drinkers} spoons of tea and {0.5 * drinkers} spoons of spice.</li>
+                <li>Add {0.5 * drinkers} cups of milk to boil and sugar  to taste.</li>
+            </ol>
         );
     }
-    
 
     return (
         <div className="Index-header">
+            <h1>To Do List for {formatDate(today)}</h1>
             <h1>The Amazing Cientists</h1>
             <Card>
                 <Avatar
@@ -440,6 +558,14 @@ function App() {
                         name="Photo of Tam"
                     />
                 </ul>
+            </section>
+            <ul>{listItems}</ul>
+            <section>
+                <h1>Spiced Chai Recipe</h1>
+                <h2>For Two</h2>
+                <Recipe drinkers={2}/>
+                <h2>For a gathering</h2>
+                <Recipe drinkers={4}/>
             </section>
         </div>
         
