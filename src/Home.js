@@ -23,6 +23,9 @@ const Home = () =>{
                 <li>
                     <Link to="/Atv04"><button className="btn-voltar">Atividade 4</button></Link>
                 </li>
+                <li>
+                    <Link to="/Atv05"><button className="btn-voltar">Atividade 5</button></Link>
+                </li>
             </ul>
         </header>
 </div>            
